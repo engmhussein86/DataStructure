@@ -1,7 +1,4 @@
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class DS_Queue {
     public static void main(String[] args){
@@ -31,7 +28,25 @@ public class DS_Queue {
 //        queue.element();// throw exception
 
         System.out.println("queue: "+ queue);
+///////////////////////////////////////////////////////////////////////////////
+        /* Priority queue - serves elements with highest priority to lowest priority*/
+//        Queue<Double>pDoubleQueue = new PriorityQueue<Double>();//asc
+        Queue<Double>pDoubleQueue = new PriorityQueue<Double>(Collections.reverseOrder());//desc
+        pDoubleQueue.offer(5.5);
+        pDoubleQueue.offer(3.5);
+        pDoubleQueue.offer(2.0);
+        pDoubleQueue.offer(1.5);
 
+        // start from smallest to highest (asc)
+        // if add reverse in constructor, arrange from high to small (desc)
+        System.out.println("pDoubleQueue : "+pDoubleQueue);
+        while(!pDoubleQueue.isEmpty()){
+            System.out.println(pDoubleQueue.poll());
+        }
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
         //Where queue is used?? hold element before processing
         // 1- keyboard buffer (letters should appear in order they are pressed)
         // 2- Printer Queue
